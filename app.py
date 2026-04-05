@@ -8,8 +8,9 @@ from openai import OpenAI
 import os
 
 # ------------------ API SETUP ------------------
-import os
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+import streamlit as st
+from openai import OpenAI
+client = OpenAI(api_key=os.secrets["OPENAI_API_KEY"])
 
 def generate_remedy(disease_name):
     try:
